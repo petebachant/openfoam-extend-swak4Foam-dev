@@ -10,14 +10,14 @@ env:
     - REPO_DIR=$PWD
 
 before_install:
-    - sudo apt-get install -qq build-essential bison flex subversion git mercurial wget
+    - sudo apt-get install -qq git-core build-essential binutils-dev cmake flex bison zlib1g-dev qt4-dev-tools libqt4-dev libqtwebkit-dev gnuplot libreadline-dev libncurses-dev libxt-dev libopenmpi-dev openmpi-bin libboost-system-dev libboost-thread-dev libgmp-dev libmpfr-dev python python-dev
     - mkdir ~/OpenFOAM
-    - cd ~/OpenFOAM
-    - git clone https://github.com/OpenFOAM/OpenFOAM-dev.git
 
 install:
+    - cd ~/OpenFOAM
+    - git clone https://github.com/OpenFOAM/OpenFOAM-dev.git
     - source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc
-    # Move this repo into the correct directory
+    # Move OpenFOAM repo into the correct directory
     - cd ~
     - mkdir -p $WM_PROJECT_USER_DIR
     - mv $REPO_DIR $WM_PROJECT_USER_DIR/swak4Foam-dev
