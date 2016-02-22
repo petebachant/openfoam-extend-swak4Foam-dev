@@ -1,0 +1,31 @@
+# Travis CI setup for swak4Foam-dev
+# https://openfoamwiki.net/index.php/Installation/swak4Foam/Installing_On/Ubuntu#Ubuntu_10.04_to_14.10
+
+sudo: required
+dist: trusty
+language: cpp
+
+env:
+  global:
+    - REPO_DIR=$PWD
+
+before_install:
+    - sudo apt-get install build-essential bison flex subversion git mercurial wget
+    - mkdir ~/OpenFOAM
+    - cd ~/OpenFOAM
+    - git clone https://github.com/OpenFOAM/OpenFOAM-dev.git
+
+install:
+    - source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc
+    # Move this repo into the correct directory
+    - cd ~
+    - mv $REPO_DIR $WM_PROJECT_THIRD_PARTY_DIR/swak4Foam-dev
+
+before_script:
+    - source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc
+    - cd $WM_PROJECT_THIRD_PARTY_DIR/swak4Foam-dev
+    - export WM_NCOMPPROCS=2
+
+script:
+    - ./maintainanceScripts/compileRequirements.sh
+    - ./Allwmake
