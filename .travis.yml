@@ -10,7 +10,7 @@ env:
     - REPO_DIR=$PWD
 
 before_install:
-    - sudo apt-get install build-essential bison flex subversion git mercurial wget
+    - sudo apt-get install -qq build-essential bison flex subversion git mercurial wget
     - mkdir ~/OpenFOAM
     - cd ~/OpenFOAM
     - git clone https://github.com/OpenFOAM/OpenFOAM-dev.git
