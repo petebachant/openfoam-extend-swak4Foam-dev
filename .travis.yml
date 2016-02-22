@@ -19,11 +19,12 @@ install:
     - source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc
     # Move this repo into the correct directory
     - cd ~
+    - mkdir -p $WM_PROJECT_USER_DIR
     - mv $REPO_DIR $WM_PROJECT_USER_DIR/swak4Foam-dev
 
 before_script:
     - source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc
-    - cd $WM_PROJECT_THIRD_PARTY_DIR/swak4Foam-dev
+    - cd $WM_PROJECT_USER_DIR/swak4Foam-dev
     - export WM_NCOMPPROCS=2
 
 script:
