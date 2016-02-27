@@ -23,6 +23,8 @@ install:
     - tar -xf OpenFOAM-dev.linux64GccDPInt32Opt_2016-02-27.tbz
     - wget https://github.com/wyldckat/ThirdParty-dev/releases/download/20160227-181109/ThirdParty-dev.linux64GccDPInt32Opt_2016-02-27.tbz
     - tar -xf ThirdParty-dev.linux64GccDPInt32Opt_2016-02-27.tbz
+    # Check that we have OpenFOAM installed
+    - icoFoam -help
     # Move swak4Foam repo into the correct directory
     - cd ~
     - mkdir -p $WM_PROJECT_USER_DIR
