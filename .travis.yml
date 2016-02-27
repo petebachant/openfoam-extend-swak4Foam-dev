@@ -16,8 +16,14 @@ before_install:
 install:
     - cd ~/OpenFOAM
     - git clone https://github.com/OpenFOAM/OpenFOAM-dev.git
+    - git clone https://github.com/OpenFOAM/ThirdParty-dev.git
     - source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc
-    # Move OpenFOAM repo into the correct directory
+    # Obtain binaries built by wyldckat
+    - wget https://github.com/wyldckat/OpenFOAM-dev/releases/download/20160227-181109/OpenFOAM-dev.linux64GccDPInt32Opt_2016-02-27.tbz
+    - tar -xf OpenFOAM-dev.linux64GccDPInt32Opt_2016-02-27.tbz
+    - wget https://github.com/wyldckat/ThirdParty-dev/releases/download/20160227-181109/ThirdParty-dev.linux64GccDPInt32Opt_2016-02-27.tbz
+    - tar -xf ThirdParty-dev.linux64GccDPInt32Opt_2016-02-27.tbz
+    # Move swak4Foam repo into the correct directory
     - cd ~
     - mkdir -p $WM_PROJECT_USER_DIR
     - mv $REPO_DIR $WM_PROJECT_USER_DIR/swak4Foam-dev
