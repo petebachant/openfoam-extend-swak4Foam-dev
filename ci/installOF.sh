@@ -14,6 +14,7 @@ then
     wget https://github.com/wyldckat/ThirdParty-dev/releases/download/20160227-181109/ThirdParty-dev.linux64GccDPInt32Opt_2016-02-27.tbz
     tar -xf ThirdParty-dev.linux64GccDPInt32Opt_2016-02-27.tbz
     cd $WM_PROJECT_DIR
+    echo $PWD
     wmakeLnIncludeAll
 elif [ "$1" = "3.0" ]
 then
