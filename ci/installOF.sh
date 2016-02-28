@@ -4,7 +4,7 @@
 
 if [ "$1" = "dev" ]
 then
-    cd ~/OpenFOAM
+    cd $HOME/OpenFOAM
     git clone https://github.com/OpenFOAM/OpenFOAM-dev.git
     git clone https://github.com/OpenFOAM/ThirdParty-dev.git
     source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc
@@ -14,7 +14,6 @@ then
     wget https://github.com/wyldckat/ThirdParty-dev/releases/download/20160227-181109/ThirdParty-dev.linux64GccDPInt32Opt_2016-02-27.tbz
     tar -xf ThirdParty-dev.linux64GccDPInt32Opt_2016-02-27.tbz
     cd $WM_PROJECT_DIR
-    echo $PWD
     wmakeLnIncludeAll
 elif [ "$1" = "3.0" ]
 then
