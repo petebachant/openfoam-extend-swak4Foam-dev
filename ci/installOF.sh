@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # This script installs OpenFOAM on the system
 # The first arg should be the OpenFOAM version
 
